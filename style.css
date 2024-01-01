@@ -1,0 +1,232 @@
+[data-theme="main"] {
+    --main-bg: hsl(222, 26%, 31%);
+    --toggle-keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+
+    --key-bg-one: hsl(225, 21%, 49%);
+    --key-shadow-one: hsl(224, 28%, 35%);
+    --key-bg-two: hsl(6, 63%, 50%);
+    --key-shadow-two: hsl(6, 70%, 34%);
+    --key-bg-three: hsl(30, 25%, 89%);
+    --key-shadow-three: hsl(28, 16%, 65%);
+
+    --text-clr-one: hsl(0, 0%, 100%);
+    --text-clr-two: hsl(221, 14%, 31%);
+}
+
+[data-theme="light"] {
+    --main-bg: hsl(0, 0%, 90%);
+    --toggle-keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+
+    --key-bg-one: hsl(185, 42%, 37%);
+    --key-shadow-one: hsl(185, 58%, 25%);
+    --key-bg-two: hsl(25, 98%, 40%);
+    --key-shadow-two: hsl(25, 99%, 27%);
+    --key-bg-three: hsl(45, 7%, 89%);
+    --key-shadow-three: hsl(35, 11%, 61%);
+
+    --text-clr-one: hsl(60, 10%, 19%);
+    --text-clr-two: hsl(0, 0%, 100%);
+}
+
+[data-theme="dark"] {
+    --main-bg: hsl(268, 75%, 9%);
+    --toggle-keypad-bg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+
+    --key-bg-one: hsl(281, 89%, 26%);
+    --key-shadow-one: hsl(285, 91%, 52%);
+    --key-bg-two: hsl(176, 100%, 44%);
+    --key-shadow-two: hsl(177, 92%, 70%);
+    --key-bg-three: hsl(268, 47%, 21%);
+    --key-shadow-three: hsl(290, 70%, 36%);
+
+    --text-clr-one: hsl(52, 100%, 62%);
+    --text-clr-two: hsl(198, 20%, 13%);
+    --text-clr-three: hsl(0, 0%, 100%);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    max-width: 90%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-clr-one);
+}
+
+.title {
+    font-size: 30px;
+}
+
+.theme-switcher {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    font-size: 10px;
+}
+
+.theme-switcher span:first-child {
+    margin-bottom: 5px;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+
+.buttons {
+    background-color: var(--toggle-keypad-bg);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.buttons input {
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    background-color: var(--key-bg-two);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.buttons input:checked {
+    opacity: 1;
+}
+
+
+.screen {
+    background-color: var(--screen-bg);
+    min-height: 80px;
+    border-radius: 10px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+    color: var(--text-clr-one);
+    font-size: 35px;
+}
+
+.keypad {
+    background-color: var(--toggle-keypad-bg);
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px 10px;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding: 20px 15px;
+    border-radius: 5px;
+}
+
+.key:last-child,
+.key:nth-last-child(2) {
+    grid-column: span 2;
+}
+
+.key[data-key-bg="one"] {
+    background-color: var(--key-bg-one);
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 5px var(--key-shadow-one);
+}
+
+.key[data-key-bg="two"] {
+    background-color: var(--key-bg-two);
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 5px var(--key-shadow-two);
+}
+
+.key[data-key-bg="three"] {
+    background-color: var(--key-bg-three);
+    color: var(--text-clr-one);
+    box-shadow: 0 5px var(--key-shadow-three);
+}
+
+[data-theme="main"] .key[data-key-bg="three"] {
+    color: var(--text-clr-two);
+}
+
+@media (min-width:768px) {
+    .buttons input:hover {
+        opacity: .8;
+    }
+
+    .screen {
+        min-height: 120px;
+        font-size: 50px;
+    }
+
+    .keypad {
+        gap: 25px 20px;
+        padding: 30px;
+    }
+
+    .key {
+        min-width: 100px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .key:hover {
+        filter: brightness(120%);
+    }
+
+    .key[data-key-bg="one"],
+    .key[data-key-bg="two"] {
+        font-size: 30px;
+    }
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.attribution a {
+    color: white;
+}

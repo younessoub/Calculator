@@ -1,26 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="main">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <main>
+    <div class="main-container">
+      <div class="header">
+        <span class="title">calc</span>
+        <div class="theme-switcher">
+          <span>THEME</span>
+          <div class="toggle">
+            <div class="labels">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="buttons">
+              <input type="radio" name="toggle" id="main" checked>
+              <input type="radio" name="toggle" id="light">
+              <input type="radio" name="toggle" id="dark">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen">
+        44444444
+      </div>
+      <div class="keypad">
+        <div class="key" data-key-bg="three">7</div>
+        <div class="key" data-key-bg="three">8</div>
+        <div class="key" data-key-bg="three">9</div>
+        <div class="key" data-key-bg="one">DEL</div>
+        <div class="key" data-key-bg="three">4</div>
+        <div class="key" data-key-bg="three">5</div>
+        <div class="key" data-key-bg="three">6</div>
+        <div class="key" data-key-bg="three">+</div>
+        <div class="key" data-key-bg="three">1</div>
+        <div class="key" data-key-bg="three">2</div>
+        <div class="key" data-key-bg="three">3</div>
+        <div class="key" data-key-bg="three">-</div>
+        <div class="key" data-key-bg="three">.</div>
+        <div class="key" data-key-bg="three">0</div>
+        <div class="key" data-key-bg="three">/</div>
+        <div class="key" data-key-bg="three">x</div>
+        <div class="key" data-key-bg="one">RESET</div>
+        <div class="key" data-key-bg="two">=</div>
+      </div>
+    </div>
+  </main>
 
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/younessoub">Youness</a>.
+  </footer>
 </body>
+
 </html>
