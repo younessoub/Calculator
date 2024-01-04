@@ -135,11 +135,20 @@ main {
     border-radius: 10px;
     margin: 25px 0;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 6%;
     color: var(--text-clr-one);
+}
+
+.screen input {
+    width: 100%;
     font-size: 35px;
+    outline: none;
+    border: none;
+    color: var(--text-clr-one);
+    background-color: var(--screen-bg);
+    text-align: right;
+
 }
 
 .keypad {
@@ -196,6 +205,9 @@ main {
 
     .screen {
         min-height: 120px;
+    }
+
+    .screen input {
         font-size: 50px;
     }
 
