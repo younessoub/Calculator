@@ -1,6 +1,6 @@
 const html = document.querySelector('html');
 const themeSwitch = document.querySelectorAll('.buttons input')
-const screen = document.querySelector('.screen input')
+const screen = document.querySelector('.screen')
 
 
 const savedTheme = localStorage.getItem('theme');
@@ -16,13 +16,13 @@ if (savedTheme) {
     }
 }
 
-themeSwitch.forEach((radio) => {
-    if (html.getAttribute('data-theme') == radio.id) {
-        radio.checked = true
+themeSwitch.forEach((input) => {
+    if (html.getAttribute('data-theme') == input.id) {
+        input.checked = true
     }
-    radio.addEventListener('change', () => {
-        if (radio.checked) {
-            changeTheme(radio.id)
+    input.addEventListener('change', () => {
+        if (input.checked) {
+            changeTheme(input.id)
         }
     })
 })
@@ -34,4 +34,34 @@ function changeTheme(theme) {
 
 function saveToLocalStorage(theme) {
     localStorage.setItem('theme', theme)
+}
+
+function appendToScreen(char) {
+    if (screen.innerText == 'Syntax Error') {
+        screen.innerText = ''
+    }
+    screen.innerText += char
+}
+
+function removeLastChar() {
+    const screenArr = screen.innerText.split('');
+    screenArr.pop();
+    screen.innerText = screenArr.join('')
+}
+
+function clearScreen() {
+    screen.innerText = '';
+}
+
+function calculate() {
+
+    const expression = screen.innerText.replace(',', '.')
+
+    try {
+        const result = Function('"use strict";return (' + expression + ')')();
+        screen.innerText = result.toString().replace('.', ',');
+    } catch (error) {
+        screen.innerText = 'Syntax Error';
+        // console.log(error)
+    }
 }

@@ -68,6 +68,7 @@ main {
 
 .main-container {
     max-width: 90%;
+    height: 100%;
 }
 
 .header {
@@ -130,17 +131,22 @@ main {
 
 
 .screen {
+    /* box-sizing: content-box; */
     background-color: var(--screen-bg);
+    height: 100%;
     min-height: 80px;
     border-radius: 10px;
     margin: 25px 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding: 0 6%;
     color: var(--text-clr-one);
+    font-size: 35px;
+    overflow: scroll;
 }
 
-.screen input {
+/* .screen input {
     width: 100%;
     font-size: 35px;
     outline: none;
@@ -149,7 +155,7 @@ main {
     background-color: var(--screen-bg);
     text-align: right;
 
-}
+} */
 
 .keypad {
     background-color: var(--toggle-keypad-bg);
@@ -205,11 +211,13 @@ main {
 
     .screen {
         min-height: 120px;
+        font-size: 50px;
+
     }
 
-    .screen input {
+    /* .screen input {
         font-size: 50px;
-    }
+    } */
 
     .keypad {
         gap: 25px 20px;

@@ -38,27 +38,27 @@
         </div>
       </div>
       <div class="screen">
-        <input type="text" disabled>
+        <!-- <input type="text" disabled> -->
       </div>
       <div class="keypad">
-        <div class="key" data-key-bg="three">7</div>
-        <div class="key" data-key-bg="three">8</div>
-        <div class="key" data-key-bg="three">9</div>
-        <div class="key" data-key-bg="one">DEL</div>
-        <div class="key" data-key-bg="three">4</div>
-        <div class="key" data-key-bg="three">5</div>
-        <div class="key" data-key-bg="three">6</div>
-        <div class="key" data-key-bg="three">+</div>
-        <div class="key" data-key-bg="three">1</div>
-        <div class="key" data-key-bg="three">2</div>
-        <div class="key" data-key-bg="three">3</div>
-        <div class="key" data-key-bg="three">-</div>
-        <div class="key" data-key-bg="three">.</div>
-        <div class="key" data-key-bg="three">0</div>
-        <div class="key" data-key-bg="three">/</div>
-        <div class="key" data-key-bg="three">x</div>
-        <div class="key" data-key-bg="one">RESET</div>
-        <div class="key" data-key-bg="two">=</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('7')">7</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('8')">8</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('9')">9</div>
+        <div class="key" data-key-bg="one" onclick="removeLastChar()">DEL</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('4')">4</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('5')">5</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('6')">6</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('+')">+</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('1')">1</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('2')">2</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('3')">3</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('-')">-</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen(',')">.</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('0')">0</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('/')">/</div>
+        <div class="key" data-key-bg="three" onclick="appendToScreen('*')">x</div>
+        <div class="key" data-key-bg="one" onclick="clearScreen()">RESET</div>
+        <div class="key" data-key-bg="two" onclick="calculate()">=</div>
       </div>
     </div>
   </main>
