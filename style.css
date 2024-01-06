@@ -1,3 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
 [data-theme="main"] {
     --main-bg: hsl(222, 26%, 31%);
     --toggle-keypad-bg: hsl(223, 31%, 20%);
@@ -47,14 +54,6 @@
     --text-clr-three: hsl(0, 0%, 100%);
 }
 
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'League Spartan', sans-serif;
-}
-
 body {
     background-color: var(--main-bg);
 }
@@ -102,7 +101,6 @@ main {
 .labels {
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid red; */
     width: 100%;
 }
 
@@ -129,33 +127,18 @@ main {
     opacity: 1;
 }
 
-
 .screen {
-    /* box-sizing: content-box; */
     background-color: var(--screen-bg);
-    height: 100%;
-    min-height: 80px;
+    height: 80px;
     border-radius: 10px;
     margin: 25px 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 6%;
-    color: var(--text-clr-one);
-    font-size: 35px;
-    overflow: scroll;
-}
-
-/* .screen input {
-    width: 100%;
-    font-size: 35px;
-    outline: none;
-    border: none;
-    color: var(--text-clr-one);
-    background-color: var(--screen-bg);
+    width: 320px;
     text-align: right;
-
-} */
+    padding: 28px 6%;
+    color: var(--text-clr-one);
+    font-size: 35px;
+    overflow: auto hidden;
+}
 
 .keypad {
     background-color: var(--toggle-keypad-bg);
@@ -210,14 +193,11 @@ main {
     }
 
     .screen {
-        min-height: 120px;
+        height: 120px;
         font-size: 50px;
-
+        width: 520px;
+        padding: 40px 6%;
     }
-
-    /* .screen input {
-        font-size: 50px;
-    } */
 
     .keypad {
         gap: 25px 20px;

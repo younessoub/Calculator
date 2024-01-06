@@ -5,12 +5,15 @@ const screen = document.querySelector('.screen')
 
 const savedTheme = localStorage.getItem('theme');
 const isPreferedThemeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isPreferedThemeLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
 if (savedTheme) {
     changeTheme(savedTheme)
 } else {
     if (isPreferedThemeDark) {
         changeTheme('dark')
+    } else if (isPreferedThemeLight) {
+        changeTheme('light')
     } else {
         changeTheme('main')
     }
@@ -29,10 +32,6 @@ themeSwitch.forEach((input) => {
 
 function changeTheme(theme) {
     html.setAttribute('data-theme', theme)
-    saveToLocalStorage(theme)
-}
-
-function saveToLocalStorage(theme) {
     localStorage.setItem('theme', theme)
 }
 
@@ -41,6 +40,7 @@ function appendToScreen(char) {
         screen.innerText = ''
     }
     screen.innerText += char
+    scrollToRight()
 }
 
 function removeLastChar() {
@@ -62,6 +62,9 @@ function calculate() {
         screen.innerText = result.toString().replace('.', ',');
     } catch (error) {
         screen.innerText = 'Syntax Error';
-        // console.log(error)
     }
+}
+
+function scrollToRight() {
+    screen.scrollLeft = screen.scrollWidth;
 }
